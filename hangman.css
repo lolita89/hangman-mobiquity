@@ -1,0 +1,38 @@
+body {
+    margin: 10px; 
+}
+
+h1 {
+    color: red;
+}
+
+.explanation {
+    color: blue;
+}
+
+.button-start {
+    font-size: 80px;
+    
+}
+
+.letter-container {
+    margin: 5px;
+    text-transform: uppercase;
+    border: 15px solid #ccc;
+    font-size: 15px;
+    text-align: center;   
+}
+
+h1 {
+    color: red;
+}
+
+.keyboard {
+    background-color: aquamarine;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.input-boxes {
+    text-transform: uppercase;
+}

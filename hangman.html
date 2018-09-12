@@ -5,16 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <style>
-
-        .letter-container {
-            border: 1px solid #ccc;
-        }
-
-    </style>
-
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="hangman.css" />
 </head>
 
 <body>
@@ -24,19 +15,19 @@
 
     <br>
 
-   <!--keyboard-->
-    <div id="keyboard" ></div>
+    <div id="keyboard"></div>
+
+    <br>
 
     <div>
         <button onclick="reset()">Reset</button>
     </div>
 
+    <br>
+
+    <div id="statement"></div>
 
     <script>
-    //welcome page
-    //build the interface => box inputs and keyboard
-    //guessing process
-
 
     var wrongGuesses = 0;
     var rightGuesses = 0;
@@ -52,7 +43,7 @@
     function assign(button) {
         console.log(button);
         var letter = button;
-
+        
         if (letter === "g") {
             alert("Correct letter!");
             document.getElementById('0').value = "g";
@@ -72,7 +63,22 @@
             alert('correct letter!');
             document.getElementById('3').value = "l";
             rightGuesses = rightGuesses + 1;
+        } else {
+            wrongGuesses = wrongGuesses + 1;
+            alert('wrong  letter!');
+            console.log(wrongGuesses);
         }
+        
+        //if user guest all correct letters
+        if (rightGuesses === 4){
+      alert('Congrats! You won! :D');
+    }
+
+        // if user have 9 times wrong
+        if (wrongGuesses === 8){
+      alert('GAME OVER!');
+    }
+    
     };
 
     //reset page function
@@ -86,10 +92,11 @@
     for ( var i = 0; i < letter.length; i++) {
             text += letter[i];
             // console.log(letter[i]);
-            document.getElementById('keyboard').innerHTML += '<button onclick="assign(this.id)" id="'+letter[i]+'">' + letter[i] + '</button>';
+            document.getElementById('keyboard').innerHTML += '<button onclick="assign(this.id)" id="'+letter[i]+'" class="keyboard">' + letter[i] + '</button>';
             // or // buttons.innerHTML += '<button>' + letter[i] + '</button>';
         }
-        
+    
+    //make inputs by loop
     for ( var i = 0; i < word.length; i++) {
             text += word[i];
             idName = "input" + "-" + word[i];
