@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hangman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <style>
+
+        .letter-container {
+            border: 1px solid #ccc;
+        }
+
+    </style>
+
+    
+</head>
+
+<body>
+    <h1>Hangman</h1>
+
+    <div>
+        <input value="" id="h-letter" class="letter-container" disabled>
+        <input value="" class="letter-container" disabled>
+        <input value="" class="letter-container" disabled>
+        <input value="" class="letter-container" disabled>
+
+    </div>
+
+    <br>
+
+   <!--keyboard-->
+    <div onclick="assign()" id="keyboard" ></div>
+
+    <div>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+
+    <script>
+    //welcome page
+    //build the interface => box inputs and keyboard
+    //guessing process
+
+
+        
+    let words = "hangman";
+    let letters = "abcdefghijklmnopqrstuvwxyz";
+
+    //array of words and letters    
+    let word= words.split("");
+    let letter = letters.split("");
+
+    //the keyboard click function
+    function assign() {
+        document.getElementById("h-letter").value = 'test!!!'
+    };
+
+    //reset page function
+    function reset() {
+      location.reload();  
+    };
+
+    //make buttons and return the letters on the keyboard button by loop
+    var text = "";
+    
+    for ( var i = 0; i < letter.length; i++) {
+            text += letter[i];
+            console.log(letter[i]);
+            document.getElementById('keyboard').innerHTML += '<button>' + letter[i] + '</button>';
+            // or // buttons.innerHTML += '<button>' + letter[i] + '</button>';
+        }
+  
+
+    </script>
+    
+
+    
+</body>
+</html>
