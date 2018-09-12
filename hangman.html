@@ -31,7 +31,7 @@
     <br>
 
    <!--keyboard-->
-    <div onclick="assign()" id="keyboard" ></div>
+    <div id="keyboard" ></div>
 
     <div>
         <button onclick="reset()">Reset</button>
@@ -44,7 +44,9 @@
     //guessing process
 
 
-        
+    var wrongGuesses = 0;
+    var rightGuesses = 0;
+
     let words = "hangman";
     let letters = "abcdefghijklmnopqrstuvwxyz";
 
@@ -53,9 +55,31 @@
     let letter = letters.split("");
 
     //the keyboard click function
-    function assign() {
-        document.getElementById("h-letter").value = 'test!!!'
+    function assign(button) {
+        console.log(button);
+        
     };
+
+    function onLetterClick(){
+        var letter = "";
+
+        if (letter === 'h') {
+            //show message
+            alert('correct letter!');
+            //show the letter to board
+            document.getElementById('letter_h').value = 'h';
+            //update the total number of right guesses
+            rightGuesses = rightGuesses + 1;
+        } else if (letter === "a"){
+            alert('correct letter!');
+            document.getElementById('letter_a').value = 'a';
+            rightGuesses = rightGuesses + 1;
+
+
+
+
+        }
+    }
 
     //reset page function
     function reset() {
@@ -67,8 +91,8 @@
     
     for ( var i = 0; i < letter.length; i++) {
             text += letter[i];
-            console.log(letter[i]);
-            document.getElementById('keyboard').innerHTML += '<button>' + letter[i] + '</button>';
+            // console.log(letter[i]);
+            document.getElementById('keyboard').innerHTML += '<button onclick="assign(this.id)" id="'+letter[i]+'">' + letter[i] + '</button>';
             // or // buttons.innerHTML += '<button>' + letter[i] + '</button>';
         }
   
