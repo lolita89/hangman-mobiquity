@@ -9,12 +9,9 @@ let word= words.split("");
 let letter = letters.split("");
 
 //the keyboard click function
-function assign(value) {
-    console.log(value);
-    var letter = value;
-
-    let turnLeft = 8;
-    turnLeft = turnLeft - 1;
+function assign(valueLetter) {
+    console.log(valueLetter);
+    var letter = valueLetter;
     
     if (letter === "g") {
         document.getElementById('statement').innerHTML = '<p>Correct letter!</p>';
@@ -45,7 +42,7 @@ function assign(value) {
     //if user guest all correct letters
     if (rightGuesses === 4){
         document.getElementById('statement').innerHTML = '<p>Congrats you won! :D</p>';
-        document.getElementById('keyboard').innerHTML = `<img src="https://media1.giphy.com/media/BlVnrxJgTGsUw/giphy.gif" />`
+        document.getElementById('keyboard').innerHTML = `<img src="https://media.giphy.com/media/4AZ7jvyD54AFO/giphy.gif" />`
     }
 
     // if user have 8 times wrong
@@ -56,11 +53,7 @@ function assign(value) {
 
     //everytime it is clicked, the keyboard will be changed to "keyboard-after"
     document.getElementById(letter).className = "keyboard-after";
-
-    //will show the turns left
-
-
-
+    
 };
 
 //reset page function
@@ -73,7 +66,6 @@ var text = "";
 
 for ( var i = 0; i < letter.length; i++) {
         text += letter[i];
-        // console.log(letter[i]);
         document.getElementById('keyboard').innerHTML += '<button onclick="assign(this.id)" id="'+letter[i]+'" class="keyboard">' + letter[i] + '</button>';
         // or // buttons.innerHTML += '<button>' + letter[i] + '</button>';
     }
@@ -81,7 +73,7 @@ for ( var i = 0; i < letter.length; i++) {
 //make inputs by loop
 for ( var i = 0; i < word.length; i++) {
         text += word[i];
-        idName = "input" + "-" + word[i];
+        // idName = "input" + "-" + word[i];
         // console.log(idName);
         // console.log(i);
         // console.log(word[i]);

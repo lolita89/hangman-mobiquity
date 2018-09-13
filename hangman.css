@@ -1,41 +1,72 @@
+:root {
+    --main-title-color: #6b5b95;
+    --main-background-color: #feb236;  
+    --main-statement: #d64161;   
+    --main-boxes: #ff7b25;
+}
+
 body {
     margin: 10px;
     font-family: 'Chango', cursive;
+    background-color: var(--main-background-color);
 }
 
 h1 {
-    color: red;
+    color: var(--main-title-color);
+}
+
+.statement-class {
+    color: var(--main-statement);
 }
 
 .explanation {
-    color: blue;
+    color: var(--main-statement);
 }
 
 .button-start {
-    font-size: 80px;
-    
+    background-color: var(--main-title-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Chango', cursive;
+    font-size: 50px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-start:hover {
+    background-color: var(--main-boxes);
 }
 
 .letter-container {
     margin: 5px;
     text-transform: uppercase;
-    border: 15px solid #ccc;
+    border: 15px solid var(--main-boxes);
     font-size: 15px;
     text-align: center;   
 }
 
-h1 {
-    color: red;
+.timeLeft-container {
+    color: var(--main-statement);
+}
+
+.timeLeft {
+    color: var(--main-title-color);
 }
 
 .keyboard {
-    background-color: aquamarine;
+    color: var(--main-background-color);
+    background-color: var(--main-title-color);
     text-transform: uppercase;
     margin: 5px;
 }
 
 .keyboard-after {
-    background-color: red;
+    color: var(--main-statement);
+    background-color: var(--main-statement);
     text-transform: uppercase;
     margin: 5px;
 }
