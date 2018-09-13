@@ -6,12 +6,21 @@
     <title>Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="hangman.css" />
-    <link href="https://fonts.googleapis.com/css?family=Chango|Gamja+Flower" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Chango|Gamja+Flower" rel="stylesheet">
+</head>
 
 <body>
+    
     <h1>Hangman</h1>
 
+    <div id="statement"></div>
+
     <div id="input-letters"></div>
+
+    <div class="timeLeft-container">
+    <p>Your turns left:</p>
+    <input type="number" id="timeLeft" value="8" disabled/>
+    </div>
 
     <br>
 
@@ -24,8 +33,6 @@
     </div>
 
     <br>
-
-    <div id="statement"></div>
 
     <script src="hangman.js"></script>
     
