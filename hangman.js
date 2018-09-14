@@ -9,7 +9,7 @@ let word= words.split("");
 let letter = letters.split("");
 
 //the keyboard click function
-function assign(valueLetter) {
+function keyboardClicked(valueLetter) {
     console.log(valueLetter);
     var letter = valueLetter;
 
@@ -71,7 +71,7 @@ var text = "";
 
 for ( var i = 0; i < letter.length; i++) {
         text += letter[i];
-        document.getElementById('keyboard').innerHTML += '<button onclick="assign(this.id)" id="'+letter[i]+'" class="keyboard">' + letter[i] + '</button>';
+        document.getElementById('keyboard').innerHTML += '<button onclick="keyboardClicked(this.id)" id="'+letter[i]+'" class="keyboard">' + letter[i] + '</button>';
         // or // keyboard.innerHTML += '<button>' + letter[i] + '</button>';
     }
 
